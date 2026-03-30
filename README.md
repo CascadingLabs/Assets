@@ -22,7 +22,7 @@ Every logo follows a **periodic table element tile** motif: a rounded rectangle 
 
 | Position | Content | Meaning |
 |---|---|---|
-| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (third project). VoidCrawl uses **401** (HTTP 401 Unauthorized). |
+| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (nod to the escalation tiers). VoidCrawl uses **401** (HTTP 401 Unauthorized). |
 | Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**. Arbitrary but stable, like atomic mass. |
 | Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Qs** = QScrape, **Cl** = Cascading Labs, **Ys** = Yosoi, **Vc** = VoidCrawl. |
 | Below center | Name | The full project name in regular weight. |
@@ -30,6 +30,8 @@ Every logo follows a **periodic table element tile** motif: a rounded rectangle 
 ### Double border
 
 The outer border is bright and solid (3.5 px stroke). The inner border is inset by 12 px, thinner (1 px), and drawn at 35% opacity. This adds depth without visual noise.
+
+Each project also has a `no-lines/` subdirectory with the same color and monochrome variants but without the double border. These are useful for contexts where the tile border feels too heavy (favicons, small avatars, embedded UI).
 
 ### Typography
 
@@ -62,13 +64,15 @@ Light-mode variants invert the relationship: pale tinted background with dark ac
 Assets/
 ├── global.css              ← canonical brand design tokens (all projects)
 ├── cascading-labs/
-│   ├── logo.svg              ← canonical (dark)
-│   ├── logo.png              ← 512x512 raster
-│   ├── logo.jpg
-│   ├── logo-dark.*           ← explicit dark variant (same as logo.*)
-│   ├── logo-light.*          ← light background variant
-│   ├── logo-mono-dark.*      ← white on black
-│   └── logo-mono-light.*     ← black on white
+│   ├── dark/logo.{svg,png,jpg}, favicon.ico
+│   ├── light/logo.{svg,png,jpg}, favicon.ico
+│   ├── mono-dark/logo.{svg,png,jpg}, favicon.ico
+│   ├── mono-light/logo.{svg,png,jpg}, favicon.ico
+│   └── no-lines/                       ← same variants without double border
+│       ├── dark/logo.{svg,png,jpg}, favicon.ico
+│       ├── light/logo.{svg,png,jpg}, favicon.ico
+│       ├── mono-dark/logo.{svg,png,jpg}, favicon.ico
+│       └── mono-light/logo.{svg,png,jpg}, favicon.ico
 ├── qscrape/
 │   └── (same structure)
 ├── yosoi/
@@ -128,14 +132,28 @@ Each project directory contains SVG source files. To re-export all raster varian
 cd Assets
 
 for project in qscrape cascading-labs yosoi voidcrawl; do
-  for variant in "" "-dark" "-light" "-mono-dark" "-mono-light"; do
-    svg="$project/logo${variant}.svg"
+  for scheme in dark light mono-dark mono-light; do
+    svg="$project/$scheme/logo.svg"
     [ -f "$svg" ] || continue
     inkscape "$svg" \
       --export-type=png \
-      --export-filename="$project/logo${variant}.png" \
+      --export-filename="$project/$scheme/logo.png" \
       --export-width=512 --export-height=512
-    magick "$project/logo${variant}.png" -quality 90 "$project/logo${variant}.jpg"
+    magick "$project/$scheme/logo.png" -quality 90 "$project/$scheme/logo.jpg"
+    magick "$project/$scheme/logo.png" -resize 256x256 \
+      -define icon:auto-resize=256,128,64,48,32,16 "$project/$scheme/favicon.ico"
+  done
+  # no-lines variants
+  for scheme in dark light mono-dark mono-light; do
+    svg="$project/no-lines/$scheme/logo.svg"
+    [ -f "$svg" ] || continue
+    inkscape "$svg" \
+      --export-type=png \
+      --export-filename="$project/no-lines/$scheme/logo.png" \
+      --export-width=512 --export-height=512
+    magick "$project/no-lines/$scheme/logo.png" -quality 90 "$project/no-lines/$scheme/logo.jpg"
+    magick "$project/no-lines/$scheme/logo.png" -resize 256x256 \
+      -define icon:auto-resize=256,128,64,48,32,16 "$project/no-lines/$scheme/favicon.ico"
   done
 done
 ```
