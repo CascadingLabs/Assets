@@ -27,7 +27,7 @@ OUT        = SCRIPT_DIR              # QR files live alongside this script
 
 BRANDS: dict[str, dict[str, str]] = {
     "cascading-labs": {"bg": "#0c2340", "fg": "#5ba4cf"},
-    "qscrape":        {"bg": "#1a1030", "fg": "#c4b4ef"},
+    "qscrape":        {"bg": "#1a0808", "fg": "#ef6464"},
     "yosoi":          {"bg": "#2e3742", "fg": "#c4d4df"},
 }
 
