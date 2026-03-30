@@ -1,10 +1,11 @@
-<svg width="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title logo-desc">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap');
     </style>
   </defs>
-  <title>Yosoi Logo</title>
+  <title id="logo-title">Yosoi Logo</title>
+  <desc id="logo-desc">Yosoi logo — periodic table tile with symbol Ys on a light slate background</desc>
 
   <!-- Background -->
   <rect x="0" y="0" width="500" height="500" fill="#e8ecf0"/>
