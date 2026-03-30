@@ -1,0 +1,200 @@
+/*
+ * Cascading Labs — Brand Design Tokens
+ * ─────────────────────────────────────
+ * Canonical color palette for all projects.
+ * Import or reference this file to stay aligned.
+ *
+ * Usage:
+ *   @import url('./global.css');
+ *   — or copy the :root block into your project's theme tokens.
+ *
+ * Each brand defines:
+ *   --XX-bg         Deep background (logo tile fill)
+ *   --XX-fg         Primary foreground / accent (logo text, QR dots)
+ *   --XX-border     Mid-tone border (logo double-border, UI outlines)
+ *   --XX-accent     UI accent (buttons, links, interactive elements)
+ *   --XX-accent-text  Text-safe accent (meets contrast on dark bg)
+ *   --XX-accent-pale  Soft tint (badges, highlights, hover states)
+ */
+
+/* ── Dark mode (default) ───────────────────────────────── */
+
+:root {
+    /* ── Neutral scale ────────────────────────────────── */
+    --brand-white: #ffffff;
+    --brand-gray-1: #e0e0e0;
+    --brand-gray-2: #b0b0b0;
+    --brand-gray-3: #808080;
+    --brand-gray-4: #555555;
+    --brand-gray-5: #2a2a2a;
+    --brand-gray-6: #1a1a1a;
+    --brand-gray-7: #0f0f0f;
+    --brand-black: #0a0a0a;
+
+    /* ── Surface tokens ───────────────────────────────── */
+    --brand-bg: #0a0a0a;
+    --brand-bg-subtle: #0f0f0f;
+    --brand-text: #e0e0e0;
+    --brand-text-muted: #b0b0b0;
+    --brand-text-dim: #808080;
+    --brand-text-marker: #555555;
+    --brand-border: #2a2a2a;
+
+    /* ── Cascading Labs — dark blue ───────────────────── */
+    --cl-bg: #0c2340;
+    --cl-fg: #5ba4cf;
+    --cl-border: #3d7eb5;
+    --cl-accent: #1e3a5f;
+    --cl-accent-text: #5ba4cf;
+    --cl-accent-pale: #90b8e0;
+    --cl-link-hover-bg: color-mix(in srgb, #1e3a5f 15%, transparent);
+
+    /* ── QScrape — dark red / coral ───────────────────── */
+    --qs-bg: #1a0808;
+    --qs-fg: #ef6464;
+    --qs-border: #c94040;
+    --qs-accent: #3d1414;
+    --qs-accent-text: #ef6464;
+    --qs-accent-pale: #e8b4b4;
+    --qs-link-hover-bg: color-mix(in srgb, #3d1414 15%, transparent);
+
+    /* ── Yosoi — slate / silver ───────────────────────── */
+    --ys-bg: #2e3742;
+    --ys-fg: #c4d4df;
+    --ys-border: #8fa3b3;
+    --ys-accent: #3a4855;
+    --ys-accent-text: #c4d4df;
+    --ys-accent-pale: #dbe4ec;
+    --ys-link-hover-bg: color-mix(in srgb, #3a4855 15%, transparent);
+
+    /* ── VoidCrawl — deep purple ──────────────────────── */
+    --vc-bg: #120a24;
+    --vc-fg: #b07adf;
+    --vc-border: #7c4dbd;
+    --vc-accent: #2d1a4e;
+    --vc-accent-text: #b07adf;
+    --vc-accent-pale: #d4bfef;
+    --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 15%, transparent);
+
+    /* ── Monochrome ───────────────────────────────────── */
+    --mono-dark-bg: #141414;
+    --mono-dark-fg: #ffffff;
+    --mono-light-bg: #f5f5f5;
+    --mono-light-fg: #000000;
+}
+
+/* ── Light mode ────────────────────────────────────────── */
+
+[data-theme="light"],
+:root.light {
+    /* Neutral scale — reversed */
+    --brand-white: #0a0a0a;
+    --brand-gray-1: #1a1a1a;
+    --brand-gray-2: #2a2a2a;
+    --brand-gray-3: #555555;
+    --brand-gray-4: #808080;
+    --brand-gray-5: #b0b0b0;
+    --brand-gray-6: #e0e0e0;
+    --brand-gray-7: #f5f5f5;
+    --brand-black: #ffffff;
+
+    /* Surfaces */
+    --brand-bg: #ffffff;
+    --brand-bg-subtle: #f5f5f5;
+    --brand-text: #0a0a0a;
+    --brand-text-muted: #555555;
+    --brand-text-dim: #808080;
+    --brand-text-marker: #b0b0b0;
+    --brand-border: #d0d0d0;
+
+    /* Cascading Labs */
+    --cl-bg: #e8f0f8;
+    --cl-fg: #1a4a72;
+    --cl-border: #2a5f8a;
+    --cl-accent: #1e3a5f;
+    --cl-accent-text: #2c5282;
+    --cl-accent-pale: #d4e5f7;
+    --cl-link-hover-bg: color-mix(in srgb, #1e3a5f 10%, transparent);
+
+    /* QScrape */
+    --qs-bg: #faf0f0;
+    --qs-fg: #a52a2a;
+    --qs-border: #c94040;
+    --qs-accent: #3d1414;
+    --qs-accent-text: #c23232;
+    --qs-accent-pale: #f7e0e0;
+    --qs-link-hover-bg: color-mix(in srgb, #3d1414 10%, transparent);
+
+    /* Yosoi */
+    --ys-bg: #e8ecf0;
+    --ys-fg: #3a4855;
+    --ys-border: #5a6e7e;
+    --ys-accent: #3a4855;
+    --ys-accent-text: #2e3742;
+    --ys-accent-pale: #d0dae2;
+    --ys-link-hover-bg: color-mix(in srgb, #3a4855 10%, transparent);
+
+    /* VoidCrawl */
+    --vc-bg: #f0eaf8;
+    --vc-fg: #4a2080;
+    --vc-border: #6b3fa0;
+    --vc-accent: #2d1a4e;
+    --vc-accent-text: #5a2d91;
+    --vc-accent-pale: #e2d5f0;
+    --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 10%, transparent);
+}
+
+/* Light mode — no-JS fallback */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --brand-white: #0a0a0a;
+        --brand-gray-1: #1a1a1a;
+        --brand-gray-2: #2a2a2a;
+        --brand-gray-3: #555555;
+        --brand-gray-4: #808080;
+        --brand-gray-5: #b0b0b0;
+        --brand-gray-6: #e0e0e0;
+        --brand-gray-7: #f5f5f5;
+        --brand-black: #ffffff;
+
+        --brand-bg: #ffffff;
+        --brand-bg-subtle: #f5f5f5;
+        --brand-text: #0a0a0a;
+        --brand-text-muted: #555555;
+        --brand-text-dim: #808080;
+        --brand-text-marker: #b0b0b0;
+        --brand-border: #d0d0d0;
+
+        --cl-bg: #e8f0f8;
+        --cl-fg: #1a4a72;
+        --cl-border: #2a5f8a;
+        --cl-accent: #1e3a5f;
+        --cl-accent-text: #2c5282;
+        --cl-accent-pale: #d4e5f7;
+        --cl-link-hover-bg: color-mix(in srgb, #1e3a5f 10%, transparent);
+
+        --qs-bg: #faf0f0;
+        --qs-fg: #a52a2a;
+        --qs-border: #c94040;
+        --qs-accent: #3d1414;
+        --qs-accent-text: #c23232;
+        --qs-accent-pale: #f7e0e0;
+        --qs-link-hover-bg: color-mix(in srgb, #3d1414 10%, transparent);
+
+        --ys-bg: #e8ecf0;
+        --ys-fg: #3a4855;
+        --ys-border: #5a6e7e;
+        --ys-accent: #3a4855;
+        --ys-accent-text: #2e3742;
+        --ys-accent-pale: #d0dae2;
+        --ys-link-hover-bg: color-mix(in srgb, #3a4855 10%, transparent);
+
+        --vc-bg: #f0eaf8;
+        --vc-fg: #4a2080;
+        --vc-border: #6b3fa0;
+        --vc-accent: #2d1a4e;
+        --vc-accent-text: #5a2d91;
+        --vc-accent-pale: #e2d5f0;
+        --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 10%, transparent);
+    }
+}

@@ -52,6 +52,12 @@ BRAND_VARIANTS: dict[str, dict[str, dict[str, str]]] = {
         "mono-dark":  {"bg": "#141414", "fg": "#ffffff", "icon_bg": "#141414", "icon_fg": "#ffffff", "border": "#ffffff"},
         "mono-light": {"bg": "#f5f5f5", "fg": "#000000", "icon_bg": "#f5f5f5", "icon_fg": "#000000", "border": "#000000"},
     },
+    "voidcrawl": {
+        "dark":       {"bg": "#120a24", "fg": "#b07adf", "icon_bg": "#120a24", "icon_fg": "#b07adf", "border": "#7c4dbd"},
+        "light":      {"bg": "#f0eaf8", "fg": "#4a2080", "icon_bg": "#f0eaf8", "icon_fg": "#4a2080", "border": "#6b3fa0"},
+        "mono-dark":  {"bg": "#141414", "fg": "#ffffff", "icon_bg": "#141414", "icon_fg": "#ffffff", "border": "#ffffff"},
+        "mono-light": {"bg": "#f5f5f5", "fg": "#000000", "icon_bg": "#f5f5f5", "icon_fg": "#000000", "border": "#000000"},
+    },
 }
 
 VARIANTS = ["dark", "light", "mono-dark", "mono-light"]
@@ -70,6 +76,10 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     ("yosoi",                 "yosoi",         "https://cascadinglabs.com/yosoi",           "yosoi",          None),
     ("yosoi/github",          "github",        "https://github.com/CascadingLabs/Yosoi",   "yosoi",          "third-party/github.svg"),
     ("yosoi/discord",         "discord",       "https://discord.gg/YreV3CzxsE",            "yosoi",          "third-party/discord.svg"),
+    # VoidCrawl
+    ("voidcrawl",             "voidcrawl",     "https://cascadinglabs.com/voidcrawl/",         "voidcrawl",    None),
+    ("voidcrawl/github",      "github",        "https://github.com/CascadingLabs/VoidCrawl",  "voidcrawl",    "third-party/github.svg"),
+    ("voidcrawl/discord",     "discord",       "https://discord.gg/ftykDhmAQN",                "voidcrawl",    "third-party/discord.svg"),
 ]
 
 MODULE_PX  = 20      # px per module in final PNG

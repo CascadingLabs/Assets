@@ -22,9 +22,9 @@ Every logo follows a **periodic table element tile** motif — a rounded rectang
 
 | Position | Content | Meaning |
 |---|---|---|
-| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404 — the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (third project). |
-| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**. These are arbitrary but stable — treat them like atomic mass. |
-| Center | Symbol | One or two characters drawn from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Qs** = QScrape, **Cl** = Cascading Labs, **Ys** = Yosoi. |
+| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404 — the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (third project). VoidCrawl uses **401** (HTTP 401 Unauthorized). |
+| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**. These are arbitrary but stable — treat them like atomic mass. |
+| Center | Symbol | One or two characters drawn from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Qs** = QScrape, **Cl** = Cascading Labs, **Ys** = Yosoi, **Vc** = VoidCrawl. |
 | Below center | Name | The full project name in regular weight. |
 
 ### Double border
@@ -52,6 +52,7 @@ Each project has its own background + accent pair. Borders use a mid-tone betwee
 | Cascading Labs | `#0c2340` | `#5ba4cf` | `#3d7eb5` |
 | QScrape | `#1a0808` | `#ef6464` | `#c94040` |
 | Yosoi | `#2e3742` | `#c4d4df` | `#8fa3b3` |
+| VoidCrawl | `#120a24` | `#b07adf` | `#7c4dbd` |
 
 Light-mode variants invert the relationship: a pale tinted background with dark accent text. Monochrome variants use pure black (`#141414`) or off-white (`#f5f5f5`) backgrounds with white or black foregrounds.
 
@@ -71,6 +72,8 @@ Assets/
 │   └── (same structure)
 ├── yosoi/
 │   └── (same structure)
+├── voidcrawl/
+│   └── (same structure)
 ├── qr-codes/
 │   ├── gen_qr.py             ← QR code generator script
 │   ├── cascadinglabs/
@@ -81,8 +84,11 @@ Assets/
 │   │   ├── qscrape.{svg,png}
 │   │   ├── discord/discord.{svg,png}
 │   │   └── github/github.{svg,png}
-│   └── yosoi/
-│       ├── yosoi.{svg,png}
+│   ├── yosoi/
+│   │   ├── yosoi.{svg,png}
+│   │   ├── discord/discord.{svg,png}
+│   │   └── github/github.{svg,png}
+│   └── voidcrawl/
 │       ├── discord/discord.{svg,png}
 │       └── github/github.{svg,png}
 ├── third-party/
@@ -101,6 +107,7 @@ Each project has a site, GitHub repo, and Discord invite. These are the URLs enc
 | Cascading Labs | https://cascadinglabs.com | https://github.com/CascadingLabs | https://discord.gg/w6bVujKphH |
 | QScrape | https://qscrape.dev | https://github.com/CascadingLabs/QScrape | https://discord.gg/5WZNzFZtgb |
 | Yosoi | https://cascadinglabs.com/yosoi | https://github.com/CascadingLabs/Yosoi | https://discord.gg/YreV3CzxsE |
+| VoidCrawl | https://cascadinglabs.com/voidcrawl/ | https://github.com/CascadingLabs/VoidCrawl | https://discord.gg/ftykDhmAQN |
 
 ## Reproduction steps
 
@@ -118,7 +125,7 @@ Each project directory contains SVG source files. To re-export all raster varian
 ```bash
 cd Assets
 
-for project in qscrape cascading-labs yosoi; do
+for project in qscrape cascading-labs yosoi voidcrawl; do
   for variant in "" "-dark" "-light" "-mono-dark" "-mono-light"; do
     svg="$project/logo${variant}.svg"
     [ -f "$svg" ] || continue
