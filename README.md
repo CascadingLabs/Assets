@@ -122,6 +122,7 @@ URLs encoded in the QR codes.
 - [uv](https://docs.astral.sh/uv/) (Python package manager)
 - [Inkscape](https://inkscape.org/) (SVG rasterizer, CLI)
 - [ImageMagick](https://imagemagick.org/) (`magick` command)
+- [librsvg](https://wiki.gnome.org/Projects/LibRsvg) (`rsvg-convert` command, used by `gen_qr.py`)
 - Optionally, the **Inter** font installed locally (`pacman -S inter-font` on Arch) for pixel-perfect PNG exports. Without it, Inkscape falls back to the system sans-serif.
 
 ### 1. Export logos from SVG to PNG and JPG

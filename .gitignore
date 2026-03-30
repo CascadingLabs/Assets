@@ -35,7 +35,6 @@ __pycache__/
 .Python
 *.egg
 *.egg-info/
-dist/
 eggs/
 .eggs/
 .venv/

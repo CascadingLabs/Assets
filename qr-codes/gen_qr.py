@@ -6,7 +6,7 @@
 #   "pillow>=10.0",
 # ]
 # ///
-"""Fancy on-brand QR code generator for Cascading Labs, QScrape, and Yosoi.
+"""Fancy on-brand QR code generator for Cascading Labs, QScrape, Yosoi, and VoidCrawl.
 
 Renders QR codes with:
   - Circle/dot data modules with spacing
@@ -319,9 +319,9 @@ def _build_fancy_svg(
 # --- Logo loading ---
 
 def _brand_logo_png(brand: str, variant: str) -> Image.Image | None:
-    p = LOGOS_DIR / brand / f"logo-{variant}.png"
+    p = LOGOS_DIR / brand / variant / "logo.png"
     if not p.exists():
-        p = LOGOS_DIR / brand / "logo.png"
+        p = LOGOS_DIR / brand / "dark" / "logo.png"
     return Image.open(p).convert("RGBA") if p.exists() else None
 
 
@@ -359,6 +359,7 @@ def _third_party_icon_png(svg_rel: str, brand: str, variant: str) -> Image.Image
         capture_output=True,
     )
     if result.returncode != 0:
+        print(f"    WARNING: rsvg-convert failed for {svg_rel} ({variant}): {result.stderr.decode().strip()}")
         return None
     return Image.open(io.BytesIO(result.stdout)).convert("RGBA")
 

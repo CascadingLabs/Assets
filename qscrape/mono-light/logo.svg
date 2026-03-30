@@ -4,6 +4,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap');
     </style>
   </defs>
+  <title>QScrape Logo</title>
 
   <!-- Background -->
   <rect x="0" y="0" width="500" height="500" fill="#f5f5f5"/>
