@@ -1,10 +1,10 @@
-# Cascading Labs — Brand Assets
+# Cascading Labs Brand Assets
 
-Visual identity assets for Cascading Labs and its projects: **QScrape** and **Yosoi**.
+Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, and **VoidCrawl**.
 
 ## Design system
 
-Every logo follows a **periodic table element tile** motif — a rounded rectangle with a double border, an element symbol at center, and metadata at the corners.
+Every logo follows a **periodic table element tile** motif: a rounded rectangle with a double border, an element symbol at center, and metadata at the corners.
 
 ### Anatomy of a tile
 
@@ -22,18 +22,18 @@ Every logo follows a **periodic table element tile** motif — a rounded rectang
 
 | Position | Content | Meaning |
 |---|---|---|
-| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404 — the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (third project). VoidCrawl uses **401** (HTTP 401 Unauthorized). |
-| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**. These are arbitrary but stable — treat them like atomic mass. |
-| Center | Symbol | One or two characters drawn from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Qs** = QScrape, **Cl** = Cascading Labs, **Ys** = Yosoi, **Vc** = VoidCrawl. |
+| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (third project). VoidCrawl uses **401** (HTTP 401 Unauthorized). |
+| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**. Arbitrary but stable, like atomic mass. |
+| Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Qs** = QScrape, **Cl** = Cascading Labs, **Ys** = Yosoi, **Vc** = VoidCrawl. |
 | Below center | Name | The full project name in regular weight. |
 
 ### Double border
 
-The outer border is bright and solid (3.5 px stroke). The inner border is inset by 12 px, thinner (1 px), and drawn at 35% opacity. This creates depth without adding visual noise.
+The outer border is bright and solid (3.5 px stroke). The inner border is inset by 12 px, thinner (1 px), and drawn at 35% opacity. This adds depth without visual noise.
 
 ### Typography
 
-**Font:** [Inter](https://rsms.me/inter/) — loaded via Google Fonts `@import` in SVGs. The font stack falls back to `system-ui, sans-serif` for headless rendering.
+**Font:** [Inter](https://rsms.me/inter/), loaded via Google Fonts `@import` in SVGs. The font stack falls back to `system-ui, sans-serif` for headless rendering.
 
 | Element | Weight | Size |
 |---|---|---|
@@ -54,15 +54,16 @@ Each project has its own background + accent pair. Borders use a mid-tone betwee
 | Yosoi | `#2e3742` | `#c4d4df` | `#8fa3b3` |
 | VoidCrawl | `#120a24` | `#b07adf` | `#7c4dbd` |
 
-Light-mode variants invert the relationship: a pale tinted background with dark accent text. Monochrome variants use pure black (`#141414`) or off-white (`#f5f5f5`) backgrounds with white or black foregrounds.
+Light-mode variants invert the relationship: pale tinted background with dark accent text. Monochrome variants use pure black (`#141414`) or off-white (`#f5f5f5`) backgrounds with white or black foregrounds.
 
 ## File structure
 
 ```
 Assets/
+├── global.css              ← canonical brand design tokens (all projects)
 ├── cascading-labs/
 │   ├── logo.svg              ← canonical (dark)
-│   ├── logo.png              ← 512×512 raster
+│   ├── logo.png              ← 512x512 raster
 │   ├── logo.jpg
 │   ├── logo-dark.*           ← explicit dark variant (same as logo.*)
 │   ├── logo-light.*          ← light background variant
@@ -89,6 +90,7 @@ Assets/
 │   │   ├── discord/discord.{svg,png}
 │   │   └── github/github.{svg,png}
 │   └── voidcrawl/
+│       ├── voidcrawl.{svg,png}
 │       ├── discord/discord.{svg,png}
 │       └── github/github.{svg,png}
 ├── third-party/
@@ -100,7 +102,7 @@ Assets/
 
 ## Links
 
-Each project has a site, GitHub repo, and Discord invite. These are the URLs encoded in the QR codes.
+URLs encoded in the QR codes.
 
 | Project | Site | GitHub | Discord |
 |---|---|---|---|
@@ -151,7 +153,7 @@ This produces PNG + SVG pairs in per-project subdirectories, each with 4 color v
 
 ### 3. Add or modify a logo
 
-1. Edit the SVG source directly — all logos follow the same template structure (see `qscrape/logo.svg` as reference).
+1. Edit the SVG source directly. All logos follow the same template structure (see `qscrape/logo.svg` as reference).
 2. Re-run the export loop from step 1 for that project.
 3. Re-run `gen_qr.py` from step 2 if the default logo (`logo.png`) changed, since QR codes embed it.
 
