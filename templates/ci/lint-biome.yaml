@@ -1,0 +1,31 @@
+# Cascading Labs — Biome Lint CI (runs parallel to main CI)
+# Note: Astro file support in Biome is best-effort.
+# The base biome.json relaxes rules for *.astro via overrides.
+
+name: Lint (Biome)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
+
+jobs:
+  biome:
+    name: Biome check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Biome lint & format check
+        run: bun run biome check --error-on-warnings

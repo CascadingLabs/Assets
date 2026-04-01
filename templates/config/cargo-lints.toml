@@ -1,0 +1,34 @@
+# Cascading Labs — Cargo.toml [lints] section (2024 Edition)
+# Copy this into your workspace Cargo.toml
+
+[lints.rust]
+# 2024: force explicit unsafe blocks even inside unsafe fns
+unsafe_op_in_unsafe_fn = "deny"
+# Prevent technical debt creep
+missing_debug_implementations = "warn"
+# Deny references to static mut (deprecated in 2024)
+static_mut_refs = "deny"
+
+[lints.clippy]
+# Start with pedantic, carve out the velocity-killers
+pedantic = { level = "warn", priority = -1 }
+
+# Correctness & Safety — zero-footgun policy
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+todo = "warn"
+unimplemented = "warn"
+
+# Enforce clean imports (threshold configured in clippy.toml)
+absolute_paths = "deny"
+# Enforce complexity threshold (configured in clippy.toml)
+cognitive_complexity = "warn"
+# Enforce module item ordering (configured in clippy.toml)
+module_item_order = "warn"
+
+# Disable noise lints that don't add value
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+module_name_repetitions = "allow"
+missing_docs_in_private_items = "allow"
