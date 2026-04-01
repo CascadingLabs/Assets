@@ -1,0 +1,70 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "timezone": "America/New_York",
+  "schedule": ["after 5pm on Friday"],
+  "labels": ["dependencies"],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
+    },
+
+    { "description": "── bun ──────────────────────────────────" },
+
+    {
+      "description": "Group bun production dependency updates",
+      "matchManagers": ["bun"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "bun-production-deps"
+    },
+    {
+      "description": "Group bun dev dependency updates",
+      "matchManagers": ["bun"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "bun-dev-deps"
+    },
+
+    { "description": "── uv ───────────────────────────────────" },
+
+    {
+      "description": "Group Python production dependency updates",
+      "matchManagers": ["uv"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "uv-production-deps"
+    },
+    {
+      "description": "Group Python dev dependency updates",
+      "matchManagers": ["uv"],
+      "matchDepTypes": ["dev"],
+      "groupName": "uv-dev-deps"
+    },
+    {
+      "description": "Group Python test dependency updates",
+      "matchManagers": ["uv"],
+      "matchDepTypes": ["tests"],
+      "groupName": "uv-test-deps"
+    },
+    {
+      "description": "Require Python 3.10+ compatibility",
+      "matchManagers": ["uv"],
+      "constraintsFiltering": "strict"
+    },
+
+    { "description": "── cargo ────────────────────────────────" },
+
+    {
+      "description": "Group Rust/Cargo dependency updates",
+      "matchManagers": ["cargo"],
+      "groupName": "rust-deps"
+    },
+    {
+      "description": "Group PyO3 and maturin updates (tightly coupled)",
+      "matchManagers": ["cargo", "pip_requirements", "pyproject"],
+      "matchPackageNames": ["pyo3", "pyo3-async-runtimes", "maturin"],
+      "groupName": "pyo3-maturin"
+    }
+  ]
+}
