@@ -1,0 +1,107 @@
+# Cascading Labs — .pre-commit-config.yaml template
+# Uncomment the sections for your project's package managers.
+
+repos:
+  # ── common ────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+
+  # ── bun / biome ──────────────────────────────
+  # - repo: local
+  #   hooks:
+  #     - id: biome-check
+  #       name: biome check
+  #       entry: bun run biome check --write --no-errors-on-unmatched
+  #       language: system
+  #       files: \.(js|ts|cjs|mjs|jsx|tsx|json|jsonc|css|astro)$
+  #       stages: [pre-commit]
+  #
+  #     - id: biome-ci-check
+  #       name: biome ci check
+  #       entry: bun run biome check --no-errors-on-unmatched
+  #       language: system
+  #       files: \.(js|ts|cjs|mjs|jsx|tsx|json|jsonc|css|astro)$
+  #       stages: [manual]
+
+  # ── uv / ruff ────────────────────────────────
+  # - repo: https://github.com/astral-sh/ruff-pre-commit
+  #   rev: v0.15.0
+  #   hooks:
+  #     # LOCAL: auto-fix linting errors
+  #     - id: ruff-check
+  #       name: ruff-local-fix
+  #       args: [--fix]
+  #       stages: [pre-commit]
+  #
+  #     # CI: strict, no modifications
+  #     - id: ruff-check
+  #       name: ruff-ci-check
+  #       args: [--no-fix, --exit-non-zero-on-fix]
+  #       stages: [manual]
+  #
+  #     # Formatter
+  #     - id: ruff-format
+  #       stages: [pre-commit, manual]
+  #
+  # - repo: https://github.com/tox-dev/pyproject-fmt
+  #   rev: v2.12.1
+  #   hooks:
+  #     - id: pyproject-fmt
+  #       stages: [pre-commit]
+  #
+  # - repo: https://github.com/astral-sh/uv-pre-commit
+  #   rev: 0.10.0
+  #   hooks:
+  #     - id: uv-lock
+  #       stages: [pre-commit, manual]
+
+  # ── cargo / rust ─────────────────────────────
+  # - repo: local
+  #   hooks:
+  #     - id: cargo-fmt
+  #       name: cargo +nightly fmt
+  #       entry: cargo +nightly fmt --all --
+  #       language: system
+  #       types: [rust]
+  #       pass_filenames: false
+  #       stages: [pre-commit, manual]
+  #
+  #     - id: cargo-clippy
+  #       name: cargo clippy
+  #       entry: cargo clippy --workspace --all-targets -- -D warnings
+  #       language: system
+  #       types: [rust]
+  #       pass_filenames: false
+  #       stages: [manual]
+  #
+  #     - id: cargo-deny
+  #       name: cargo deny
+  #       entry: cargo deny check
+  #       language: system
+  #       types: [toml]
+  #       pass_filenames: false
+  #       stages: [manual]
+
+  # ── secrets ──────────────────────────────────
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+        stages: [pre-commit, manual]
+
+  # ── conventional commits ─────────────────────
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.13.6
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
