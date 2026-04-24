@@ -15,7 +15,7 @@
 
 # Cascading Labs Brand Assets
 
-Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, **VoidCrawl**, **Assets**, **Yosoi Docs**, and **VoidCrawl Docs**.
+Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, **VoidCrawl**, **Assets**, **Yosoi Docs**, **VoidCrawl Docs**, **CLWorkstation**, and **CLTemplate**.
 
 ## Design system
 
@@ -37,9 +37,9 @@ Every logo follows a **periodic table element tile** motif: a rounded rectangle 
 
 | Position | Content | Meaning |
 |---|---|---|
-| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (nod to the escalation tiers). VoidCrawl uses **401** (HTTP 401 Unauthorized). Assets uses **23**. Docs projects share the parent's number. |
-| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**, Assets: **329.26**. Docs projects share the parent's float. |
-| Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Cl** = Cascading Labs, **Qs** = QScrape, **Ys** = Yosoi, **Vc** = VoidCrawl, **As** = Assets, **Yd** = Yosoi Docs, **Vd** = VoidCrawl Docs. |
+| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (nod to the escalation tiers). VoidCrawl uses **401** (HTTP 401 Unauthorized). Assets uses **23**. CLWorkstation uses **22** (the SSH port). CLTemplate uses **200** (HTTP 200 OK, the baseline). Docs projects share the parent's number. |
+| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**, Assets: **329.26**, CLWorkstation: **423.26**, CLTemplate: **423.26**. Docs projects share the parent's float. |
+| Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Cl** = Cascading Labs, **Qs** = QScrape, **Ys** = Yosoi, **Vc** = VoidCrawl, **As** = Assets, **Yd** = Yosoi Docs, **Vd** = VoidCrawl Docs, **Cw** = CLWorkstation, **Ct** = CLTemplate. |
 | Below center | Name | The full project name in regular weight. |
 
 ### Double border
@@ -73,8 +73,10 @@ Each project has its own background + accent pair. Borders use a mid-tone betwee
 | Assets | `#2e2319` | `#c4a882` | `#c4a882` |
 | Yosoi Docs | `#2e2319` | `#c4a882` | `#c4a882` |
 | VoidCrawl Docs | `#2e2319` | `#c4a882` | `#c4a882` |
+| CLWorkstation | `#2e2319` | `#c4a882` | `#c4a882` |
+| CLTemplate | `#2e2319` | `#c4a882` | `#c4a882` |
 
-Cascading Labs uses monochrome variants only (no colored versions). Assets, Yosoi Docs, and VoidCrawl Docs share a cardboard/peach utility palette. Light-mode variants invert the relationship: pale tinted background with dark accent text. Monochrome variants use pure black (`#141414`) or off-white (`#f5f5f5`) backgrounds with white or black foregrounds.
+Cascading Labs uses monochrome variants only (no colored versions). Assets, Yosoi Docs, VoidCrawl Docs, CLWorkstation, and CLTemplate share a cardboard/peach utility palette. Light-mode variants invert the relationship: pale tinted background with dark accent text. Monochrome variants use pure black (`#141414`) or off-white (`#f5f5f5`) backgrounds with white or black foregrounds.
 
 ## File structure
 
@@ -99,6 +101,10 @@ Assets/
 │   └── (full structure)
 ├── voidcrawl-docs/                      ← utility palette, symbol Vd
 │   └── (full structure)
+├── cl-workstation/                      ← utility palette, symbol Cw
+│   └── (full structure)
+├── cl-template/                         ← utility palette, symbol Ct
+│   └── (full structure)
 ├── qr-codes/
 │   ├── gen_qr.py             ← QR code generator script
 │   ├── cascadinglabs/        ← mono variants only
@@ -120,8 +126,16 @@ Assets/
 │   │   ├── yosoi-docs.{svg,png} (4 variants)
 │   │   ├── github/github.{svg,png}
 │   │   └── discord/discord.{svg,png}
-│   └── voidcrawl-docs/
-│       ├── voidcrawl-docs.{svg,png} (4 variants)
+│   ├── voidcrawl-docs/
+│   │   ├── voidcrawl-docs.{svg,png} (4 variants)
+│   │   ├── github/github.{svg,png}
+│   │   └── discord/discord.{svg,png}
+│   ├── cl-workstation/
+│   │   ├── cl-workstation.{svg,png} (4 variants)
+│   │   ├── github/github.{svg,png}
+│   │   └── discord/discord.{svg,png}
+│   └── cl-template/
+│       ├── cl-template.{svg,png} (4 variants)
 │       ├── github/github.{svg,png}
 │       └── discord/discord.{svg,png}
 ├── third-party/
@@ -144,6 +158,8 @@ URLs encoded in the QR codes.
 | Assets | — | https://github.com/CascadingLabs/Assets | — |
 | Yosoi Docs | — | https://github.com/CascadingLabs/YosoiDocs | https://discord.gg/c8MKEaWEEK |
 | VoidCrawl Docs | — | https://github.com/CascadingLabs/VoidCrawlDocs | https://discord.gg/c8MKEaWEEK |
+| CLWorkstation | — | https://github.com/CascadingLabs/CLWorkstation | https://discord.gg/c8MKEaWEEK |
+| CLTemplate | — | https://github.com/CascadingLabs/CLTemplate | https://discord.gg/c8MKEaWEEK |
 
 ## Reproduction steps
 
@@ -178,7 +194,7 @@ for scheme in mono-dark mono-light; do
 done
 
 # All other projects — full color + mono variants
-for project in qscrape yosoi voidcrawl assets yosoi-docs voidcrawl-docs; do
+for project in qscrape yosoi voidcrawl assets yosoi-docs voidcrawl-docs cl-workstation cl-template; do
   for scheme in dark light mono-dark mono-light; do
     svg="$project/$scheme/logo.svg"
     [ -f "$svg" ] || continue

@@ -74,6 +74,18 @@ BRAND_VARIANTS: dict[str, dict[str, dict[str, str]]] = {
         "mono-dark":  {"bg": "#141414", "fg": "#ffffff", "icon_bg": "#141414", "icon_fg": "#ffffff", "border": "#ffffff"},
         "mono-light": {"bg": "#f5f5f5", "fg": "#000000", "icon_bg": "#f5f5f5", "icon_fg": "#000000", "border": "#000000"},
     },
+    "cl-workstation": {
+        "dark":       {"bg": "#2e2319", "fg": "#c4a882", "icon_bg": "#2e2319", "icon_fg": "#c4a882", "border": "#967b55"},
+        "light":      {"bg": "#f5e0c8", "fg": "#6b4828", "icon_bg": "#f5e0c8", "icon_fg": "#6b4828", "border": "#9b7348"},
+        "mono-dark":  {"bg": "#141414", "fg": "#ffffff", "icon_bg": "#141414", "icon_fg": "#ffffff", "border": "#ffffff"},
+        "mono-light": {"bg": "#f5f5f5", "fg": "#000000", "icon_bg": "#f5f5f5", "icon_fg": "#000000", "border": "#000000"},
+    },
+    "cl-template": {
+        "dark":       {"bg": "#2e2319", "fg": "#c4a882", "icon_bg": "#2e2319", "icon_fg": "#c4a882", "border": "#967b55"},
+        "light":      {"bg": "#f5e0c8", "fg": "#6b4828", "icon_bg": "#f5e0c8", "icon_fg": "#6b4828", "border": "#9b7348"},
+        "mono-dark":  {"bg": "#141414", "fg": "#ffffff", "icon_bg": "#141414", "icon_fg": "#ffffff", "border": "#ffffff"},
+        "mono-light": {"bg": "#f5f5f5", "fg": "#000000", "icon_bg": "#f5f5f5", "icon_fg": "#000000", "border": "#000000"},
+    },
 }
 
 VARIANTS_ALL  = ["dark", "light", "mono-dark", "mono-light"]
@@ -108,6 +120,14 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     ("voidcrawl-docs",            "voidcrawl-docs",    "https://github.com/CascadingLabs/VoidCrawlDocs",   "voidcrawl-docs",   None),
     ("voidcrawl-docs/github",     "github",            "https://github.com/CascadingLabs/VoidCrawlDocs",   "voidcrawl-docs",   "third-party/github.svg"),
     ("voidcrawl-docs/discord",    "discord",           "https://discord.gg/c8MKEaWEEK",                    "voidcrawl-docs",   "third-party/discord.svg"),
+    # CLWorkstation
+    ("cl-workstation",            "cl-workstation",    "https://github.com/CascadingLabs/CLWorkstation",   "cl-workstation",   None),
+    ("cl-workstation/github",     "github",            "https://github.com/CascadingLabs/CLWorkstation",   "cl-workstation",   "third-party/github.svg"),
+    ("cl-workstation/discord",    "discord",           "https://discord.gg/c8MKEaWEEK",                    "cl-workstation",   "third-party/discord.svg"),
+    # CLTemplate
+    ("cl-template",               "cl-template",       "https://github.com/CascadingLabs/CLTemplate",      "cl-template",      None),
+    ("cl-template/github",        "github",            "https://github.com/CascadingLabs/CLTemplate",      "cl-template",      "third-party/github.svg"),
+    ("cl-template/discord",       "discord",           "https://discord.gg/c8MKEaWEEK",                    "cl-template",      "third-party/discord.svg"),
 ]
 
 MODULE_PX  = 20      # px per module in final PNG
