@@ -15,7 +15,7 @@
 
 # Cascading Labs Brand Assets
 
-Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, **VoidCrawl**, **Assets**, **Yosoi Docs**, **VoidCrawl Docs**, **CLWorkstation**, and **CLTemplate**.
+Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, **VoidCrawl**, **OpenSesame**, **Assets**, **Yosoi Docs**, **VoidCrawl Docs**, **CLWorkstation**, and **CLTemplate**.
 
 ## Design system
 
@@ -37,9 +37,9 @@ Every logo follows a **periodic table element tile** motif: a rounded rectangle 
 
 | Position | Content | Meaning |
 |---|---|---|
-| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (nod to the escalation tiers). VoidCrawl uses **401** (HTTP 401 Unauthorized). Assets uses **23**. CLWorkstation uses **22** (the SSH port). CLTemplate uses **200** (HTTP 200 OK, the baseline). Docs projects share the parent's number. |
-| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**, Assets: **329.26**, CLWorkstation: **423.26**, CLTemplate: **423.26**. Docs projects share the parent's float. |
-| Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Cl** = Cascading Labs, **Qs** = QScrape, **Ys** = Yosoi, **Vc** = VoidCrawl, **As** = Assets, **Yd** = Yosoi Docs, **Vd** = VoidCrawl Docs, **Cw** = CLWorkstation, **Ct** = CLTemplate. |
+| Top-left | Atomic number | A project-specific identifier. QScrape uses **404** (HTTP 404, the scraper's natural enemy). Cascading Labs uses **0** (the origin). Yosoi uses **3** (nod to the escalation tiers). VoidCrawl uses **401** (HTTP 401 Unauthorized). OpenSesame uses **403** (the challenge/forbidden wall it opens). Assets uses **23**. CLWorkstation uses **22** (the SSH port). CLTemplate uses **200** (HTTP 200 OK, the baseline). Docs projects share the parent's number. |
+| Top-right | Float value | A version or build signature rendered as a decimal. Cascading Labs: **24.26**, QScrape: **310.26**, Yosoi: **812.25**, VoidCrawl: **330.26**, OpenSesame: **606.26**, Assets: **329.26**, CLWorkstation: **423.26**, CLTemplate: **423.26**. Docs projects share the parent's float. |
+| Center | Symbol | One or two characters from the project name, styled like a chemical symbol (leading uppercase, optional lowercase). **Cl** = Cascading Labs, **Qs** = QScrape, **Ys** = Yosoi, **Vc** = VoidCrawl, **Os** = OpenSesame, **As** = Assets, **Yd** = Yosoi Docs, **Vd** = VoidCrawl Docs, **Cw** = CLWorkstation, **Ct** = CLTemplate. |
 | Below center | Name | The full project name in regular weight. |
 
 ### Double border
@@ -70,6 +70,7 @@ Each project has its own background + accent pair. Borders use a mid-tone betwee
 | QScrape | `#1a0808` | `#ef6464` | `#c94040` |
 | Yosoi | `#2e3742` | `#c4d4df` | `#8fa3b3` |
 | VoidCrawl | `#120a24` | `#b07adf` | `#7c4dbd` |
+| OpenSesame | `#071711` | `#9af5bf` | `#3fbf7f` |
 | Assets | `#2e2319` | `#c4a882` | `#c4a882` |
 | Yosoi Docs | `#2e2319` | `#c4a882` | `#c4a882` |
 | VoidCrawl Docs | `#2e2319` | `#c4a882` | `#c4a882` |
@@ -95,6 +96,8 @@ Assets/
 │   └── (same structure)
 ├── voidcrawl/
 │   └── (same structure)
+├── opensesame/
+│   └── (same structure)
 ├── assets/                              ← utility palette (cardboard/peach)
 │   └── (full structure)
 ├── yosoi-docs/                          ← utility palette, symbol Yd
@@ -118,6 +121,8 @@ Assets/
 │   ├── yosoi/
 │   │   └── (same structure)
 │   ├── voidcrawl/
+│   │   └── (same structure)
+│   ├── opensesame/
 │   │   └── (same structure)
 │   ├── assets/
 │   │   ├── assets.{svg,png} (4 variants)
@@ -155,6 +160,7 @@ URLs encoded in the QR codes.
 | QScrape | https://qscrape.dev | https://github.com/CascadingLabs/QScrape | https://discord.gg/5WZNzFZtgb |
 | Yosoi | https://cascadinglabs.com/yosoi | https://github.com/CascadingLabs/Yosoi | https://discord.gg/YreV3CzxsE |
 | VoidCrawl | https://cascadinglabs.com/voidcrawl/ | https://github.com/CascadingLabs/VoidCrawl | https://discord.gg/ftykDhmAQN |
+| OpenSesame | — | https://github.com/CascadingLabs/OpenSesame | https://discord.gg/c8MKEaWEEK |
 | Assets | — | https://github.com/CascadingLabs/Assets | — |
 | Yosoi Docs | — | https://github.com/CascadingLabs/YosoiDocs | https://discord.gg/c8MKEaWEEK |
 | VoidCrawl Docs | — | https://github.com/CascadingLabs/VoidCrawlDocs | https://discord.gg/c8MKEaWEEK |
@@ -194,7 +200,7 @@ for scheme in mono-dark mono-light; do
 done
 
 # All other projects — full color + mono variants
-for project in qscrape yosoi voidcrawl assets yosoi-docs voidcrawl-docs cl-workstation cl-template; do
+for project in qscrape yosoi voidcrawl opensesame assets yosoi-docs voidcrawl-docs cl-workstation cl-template; do
   for scheme in dark light mono-dark mono-light; do
     svg="$project/$scheme/logo.svg"
     [ -f "$svg" ] || continue

@@ -230,6 +230,36 @@ BRAND_VARIANTS: dict[str, dict[str, dict[str, str]]] = {
             "border": "#000000",
         },
     },
+    "opensesame": {
+        "dark": {
+            "bg": "#071711",
+            "fg": "#9af5bf",
+            "icon_bg": "#071711",
+            "icon_fg": "#9af5bf",
+            "border": "#3fbf7f",
+        },
+        "light": {
+            "bg": "#eafff1",
+            "fg": "#0b4a2a",
+            "icon_bg": "#eafff1",
+            "icon_fg": "#0b4a2a",
+            "border": "#3fbf7f",
+        },
+        "mono-dark": {
+            "bg": "#141414",
+            "fg": "#ffffff",
+            "icon_bg": "#141414",
+            "icon_fg": "#ffffff",
+            "border": "#ffffff",
+        },
+        "mono-light": {
+            "bg": "#f5f5f5",
+            "fg": "#000000",
+            "icon_bg": "#f5f5f5",
+            "icon_fg": "#000000",
+            "border": "#000000",
+        },
+    },
     "cl-workstation": {
         "dark": {
             "bg": "#2e2319",
@@ -371,6 +401,28 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
         "discord",
         "https://discord.gg/ftykDhmAQN",
         "voidcrawl",
+        "third-party/discord.svg",
+    ),
+    # OpenSesame
+    (
+        "opensesame",
+        "opensesame",
+        "https://github.com/CascadingLabs/OpenSesame",
+        "opensesame",
+        None,
+    ),
+    (
+        "opensesame/github",
+        "github",
+        "https://github.com/CascadingLabs/OpenSesame",
+        "opensesame",
+        "third-party/github.svg",
+    ),
+    (
+        "opensesame/discord",
+        "discord",
+        "https://discord.gg/c8MKEaWEEK",
+        "opensesame",
         "third-party/discord.svg",
     ),
     # Assets
