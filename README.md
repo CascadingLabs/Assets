@@ -17,6 +17,9 @@
 
 Visual identity assets for Cascading Labs and its projects: **QScrape**, **Yosoi**, **VoidCrawl**, **OpenSesame**, **Assets**, **Yosoi Docs**, **VoidCrawl Docs**, **OpenSesame Docs**, **CLWorkstation**, and **CLTemplate**.
 
+> [!WARNING]
+> Assets is research tooling for API design and web reverse engineering. **You assume all legal risk for how you use it.** Respect `robots.txt`, rate limits, and IP bans; and please don't bypass them with Tor or a VPN. Read [DISCLAIMER.md](DISCLAIMER.md) before pointing it at anything.
+
 ## Design system
 
 Every logo follows a **periodic table element tile** motif: a rounded rectangle with a double border, an element symbol at center, and metadata at the corners.
@@ -293,6 +296,10 @@ To create a new project logo, copy this template and fill in the values:
 ```
 
 Replace `BACKGROUND`, `BORDER`, `ACCENT`, `NUMBER`, `FLOAT`, `SYMBOL`, and `PROJECT NAME` with your values.
+
+## Community
+
+- **Responsible use:** see [DISCLAIMER.md](DISCLAIMER.md)
 
 ## Contact
 
