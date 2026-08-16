@@ -140,6 +140,36 @@ BRAND_VARIANTS: dict[str, dict[str, dict[str, str]]] = {
             "border": "#000000",
         },
     },
+    "opensesame-docs": {
+        "dark": {
+            "bg": "#2e2319",
+            "fg": "#c4a882",
+            "icon_bg": "#2e2319",
+            "icon_fg": "#c4a882",
+            "border": "#967b55",
+        },
+        "light": {
+            "bg": "#f5e0c8",
+            "fg": "#6b4828",
+            "icon_bg": "#f5e0c8",
+            "icon_fg": "#6b4828",
+            "border": "#9b7348",
+        },
+        "mono-dark": {
+            "bg": "#141414",
+            "fg": "#ffffff",
+            "icon_bg": "#141414",
+            "icon_fg": "#ffffff",
+            "border": "#ffffff",
+        },
+        "mono-light": {
+            "bg": "#f5f5f5",
+            "fg": "#000000",
+            "icon_bg": "#f5f5f5",
+            "icon_fg": "#000000",
+            "border": "#000000",
+        },
+    },
     "qscrape": {
         "dark": {
             "bg": "#1a0808",
@@ -214,6 +244,36 @@ BRAND_VARIANTS: dict[str, dict[str, dict[str, str]]] = {
             "icon_bg": "#f0eaf8",
             "icon_fg": "#4a2080",
             "border": "#6b3fa0",
+        },
+        "mono-dark": {
+            "bg": "#141414",
+            "fg": "#ffffff",
+            "icon_bg": "#141414",
+            "icon_fg": "#ffffff",
+            "border": "#ffffff",
+        },
+        "mono-light": {
+            "bg": "#f5f5f5",
+            "fg": "#000000",
+            "icon_bg": "#f5f5f5",
+            "icon_fg": "#000000",
+            "border": "#000000",
+        },
+    },
+    "opensesame": {
+        "dark": {
+            "bg": "#071711",
+            "fg": "#9af5bf",
+            "icon_bg": "#071711",
+            "icon_fg": "#9af5bf",
+            "border": "#3fbf7f",
+        },
+        "light": {
+            "bg": "#eafff1",
+            "fg": "#0b4a2a",
+            "icon_bg": "#eafff1",
+            "icon_fg": "#0b4a2a",
+            "border": "#3fbf7f",
         },
         "mono-dark": {
             "bg": "#141414",
@@ -373,6 +433,28 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
         "voidcrawl",
         "third-party/discord.svg",
     ),
+    # OpenSesame
+    (
+        "opensesame",
+        "opensesame",
+        "https://github.com/CascadingLabs/OpenSesame",
+        "opensesame",
+        None,
+    ),
+    (
+        "opensesame/github",
+        "github",
+        "https://github.com/CascadingLabs/OpenSesame",
+        "opensesame",
+        "third-party/github.svg",
+    ),
+    (
+        "opensesame/discord",
+        "discord",
+        "https://discord.gg/UnqRNzFYjM",
+        "opensesame",
+        "third-party/discord.svg",
+    ),
     # Assets
     ("assets", "assets", "https://github.com/CascadingLabs/Assets", "assets", None),
     (
@@ -400,7 +482,7 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     (
         "yosoi-docs/discord",
         "discord",
-        "https://discord.gg/c8MKEaWEEK",
+        "https://discord.gg/UnqRNzFYjM",
         "yosoi-docs",
         "third-party/discord.svg",
     ),
@@ -422,8 +504,30 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     (
         "voidcrawl-docs/discord",
         "discord",
-        "https://discord.gg/c8MKEaWEEK",
+        "https://discord.gg/UnqRNzFYjM",
         "voidcrawl-docs",
+        "third-party/discord.svg",
+    ),
+    # OpenSesame Docs
+    (
+        "opensesame-docs",
+        "opensesame-docs",
+        "https://github.com/CascadingLabs/OpenSesameDocs",
+        "opensesame-docs",
+        None,
+    ),
+    (
+        "opensesame-docs/github",
+        "github",
+        "https://github.com/CascadingLabs/OpenSesameDocs",
+        "opensesame-docs",
+        "third-party/github.svg",
+    ),
+    (
+        "opensesame-docs/discord",
+        "discord",
+        "https://discord.gg/UnqRNzFYjM",
+        "opensesame-docs",
         "third-party/discord.svg",
     ),
     # CLWorkstation
@@ -444,7 +548,7 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     (
         "cl-workstation/discord",
         "discord",
-        "https://discord.gg/c8MKEaWEEK",
+        "https://discord.gg/UnqRNzFYjM",
         "cl-workstation",
         "third-party/discord.svg",
     ),
@@ -466,7 +570,7 @@ TARGETS: list[tuple[str, str, str, str, str | None]] = [
     (
         "cl-template/discord",
         "discord",
-        "https://discord.gg/c8MKEaWEEK",
+        "https://discord.gg/UnqRNzFYjM",
         "cl-template",
         "third-party/discord.svg",
     ),

@@ -76,6 +76,15 @@
     --vc-accent-pale: #d4bfef;
     --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 15%, transparent);
 
+    /* -- OpenSesame - teal / access green ---------------------- */
+    --os-bg: #071711;
+    --os-fg: #9af5bf;
+    --os-border: #3fbf7f;
+    --os-accent: #123d25;
+    --os-accent-text: #9af5bf;
+    --os-accent-pale: #c7fbd9;
+    --os-link-hover-bg: color-mix(in srgb, #123d25 15%, transparent);
+
     /* ── Assets / Yosoi Docs / VoidCrawl Docs — cardboard/peach ── */
     --util-bg: #2e2319;
     --util-fg: #c4a882;
@@ -161,6 +170,15 @@
     --vc-accent-pale: #e2d5f0;
     --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 10%, transparent);
 
+    /* OpenSesame */
+    --os-bg: #eafff1;
+    --os-fg: #0b4a2a;
+    --os-border: #3fbf7f;
+    --os-accent: #123d25;
+    --os-accent-text: #0b4a2a;
+    --os-accent-pale: #d8ffe5;
+    --os-link-hover-bg: color-mix(in srgb, #123d25 10%, transparent);
+
     /* Assets / Yosoi Docs / VoidCrawl Docs — utility */
     --util-bg: #f5e0c8;
     --util-fg: #6b4828;
@@ -232,6 +250,14 @@
         --vc-accent-text: #5a2d91;
         --vc-accent-pale: #e2d5f0;
         --vc-link-hover-bg: color-mix(in srgb, #2d1a4e 10%, transparent);
+
+        --os-bg: #eafff1;
+        --os-fg: #0b4a2a;
+        --os-border: #3fbf7f;
+        --os-accent: #123d25;
+        --os-accent-text: #0b4a2a;
+        --os-accent-pale: #d8ffe5;
+        --os-link-hover-bg: color-mix(in srgb, #123d25 10%, transparent);
 
         --util-bg: #f5e0c8;
         --util-fg: #6b4828;
